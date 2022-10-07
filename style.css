@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    font-family: Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    width: 250px;
+    height: 300px;
+    padding: 1.5rem;
+
+    background-image: url('./images/laptop_photo.avif');
+    background-size: cover;
+
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+
+    transition: transform 1s ease-in-out;
+}
+
+article > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 1.5rem;
+    transform: translateY(160px);
+    transition: transform 0.5s ease-in-out 0.25s;
+}
+
+article > div > p,
+article > div > button {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out 0.5s;
+}
+
+h3 {
+    position: relative;
+    font-size: 1em;
+    transition: transform 0.5s ease-in-out 0.25s;
+}
+h3::after {
+    position: absolute;
+    top: 110%;
+    left: 0;
+
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: hsl(142, 90%, 61%);
+
+    transform: translateX(-120%);
+    transition: transform 0.25s ease-in-out;
+}
+
+p {
+    font-size: 0.75em;
+}
+
+button {
+    padding: 0.25rem 1.5rem;
+    background-color: hsl(142, 90%, 61%);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 0.6em;
+}
+
+
+/*** TRANSFORMATIONS ***/
+article:hover {
+    transform: scale(1.05);
+}
+article:hover > div > h3::after {
+    transform: translateX(0);
+}
+article:hover > div > p,
+article:hover > div > button {
+    opacity: 100%;
+    
+}
+article:hover > div {
+    transform: translateY(0);
+}
+button:hover {
+    padding: calc(0.25rem - 2px) calc(1.5rem - 2px);
+    background-color: hsl(142 90% 61% / 0);
+    border: 2px solid hsl(142, 90%, 61%);
+    transition: background-color 0.25s ease-in-out;
+}
