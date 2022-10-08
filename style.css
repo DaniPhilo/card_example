@@ -12,6 +12,7 @@ section {
     width: 100vw;
     height: 100vh;
 
+    background-color: whitesmoke;
     font-family: Helvetica, sans-serif;
     font-size: 25px;
 }
@@ -23,7 +24,6 @@ article {
 
     width: 250px;
     height: 300px;
-    padding: 1.5rem;
 
     background-image: url('./images/laptop_photo.avif');
     background-size: cover;
@@ -42,6 +42,12 @@ article > div {
     justify-content: flex-end;
     align-items: flex-start;
     gap: 1.5rem;
+    padding: 1.5rem;
+
+    background: linear-gradient(
+        hsl(0 0% 0% / 0),
+        hsl(0 0% 0% / 0.5)
+);
     transform: translateY(160px);
     transition: transform 0.5s ease-in-out 0.25s;
 }
